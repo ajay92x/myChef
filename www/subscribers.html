@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Custom Theme Style -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Food Merchant</title>
+
+        <style>
+        .list-bg a, .order-details a{ background:inherit !important; padding:0;}
+        </style>
+    </head>
+    <body>
+
+        <header class="header">
+          <h2>Package</h2>
+          <span class="back-btn"><a href="javascript:;" onclick="window.history.go(-1); return false;">
+              <img src="images/icon-back-arrow.png" alt=""></a>
+          </span>
+        </header>
+
+        <div class="page-content">
+            <div class="listing_content">
+            </div>
+        </div>
+
+        <footer class="footer">
+          <ul>
+            <li><a class="active" href="dashboard.html"><span><img src="images/icon-dashboard.png" alt=""></span>Dashboard</a></li>
+            <li><a href="profile.html"><span><img src="images/icon-profile-1.png" alt=""></span>Profile</a></li>
+            <li><a href="menu.html"><span><img src="images/icon-management-1.png" alt=""></span>Management</a></li>
+            <li><a href="account.html"><span><img src="images/icon-account-1.png" alt=""></span>Account</a></li>
+            <li class="click_logout"><a href="javascript:;"><span><img src="images/icon-logout-1.png" alt=""></span>Logout</a>
+            </li>
+          </ul>
+        </footer>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+
+        document.addEventListener('deviceready', function(){
+            app.getSubscribers();
+        });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Custom Theme Style -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Food Merchant</title>
+
+    <link href="js/select2/css/select2.min.css" rel="stylesheet">
+
+    <style>
+        .select2-container--default .select2-selection--single {
+            border: 0;
+        }
+
+        .select2-container .select2-selection--single {
+            margin-top: 6px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>Add Item</h2>
+        <span class="back-btn"><a href="javascript:;" onclick="window.history.go(-1); return false;">
+              <img src="images/icon-back-arrow.png"></a>
+          </span>
+    </header>
+
+    <div class="page-content create-menu">
+        <form>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control" placeholder="Food Item" name="type" value="single">
+                <input type="text" class="form-control" placeholder="Food Item" name="name">
+            </div>
+            <div class="form-group clearfix">
+                <textarea class="form-control" name="description" placeholder="Description..."></textarea>
+            </div>
+            <div class="form-group category_dropdown">
+
+            </div>
+            <div class="form-group course_dropdown">
+
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-addon">$</span>
+                <input type="number" min="0" step="0.01" class="form-control" placeholder="Price" name="price">
+            </div>
+            <div class="form-group clearfix">
+                <div class=" pull-left custom-check-form form-checkbox">
+                    <input id="Vegetarian" name="is_veg" value="1" type="checkbox">
+                    <label for="Vegetarian">Vegetarian</label>
+                </div>
+                <div class=" pull-left custom-check-form form-checkbox">
+                    <input id="Halal" name="is_halal" value="1" type="checkbox">
+                    <label for="Halal">Halal</label>
+                </div>
+            </div>
+
+            <div class="form-group clearfix">
+                <div class="clearfix">
+                    <div class="select_picture">
+                        <img id="myImage" style="width: 100px; height: 100px;" src="images/img-placeholder.png">
+                    </div>
+                    <!-- <img src="{{ static_file('merchant/images/img-placeholder.png') }}"> -->
+                    <!-- <a class="add-more" href="#"><img src="{{ static_file('merchant/images/icon-add.png') }}"></a> -->
+                </div>
+
+            </div>
+            <div class="text-center mg-top">
+                <button type="button" class="btn btn-default add_item">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+    <footer class="footer">
+        <ul>
+            <li><a href="dashboard.html"><span><img src="images/icon-dashboard.png"></span>Dashboard</a></li>
+            <li><a href="profile.html"><span><img src="images/icon-profile-1.png"></span>Profile</a></li>
+            <li><a class="active" href="menu.html"><span><img src="images/icon-management-1.png"></span>Management</a></li>
+            <li><a href="account.html"><span><img src="images/icon-account-1.png"></span>Account</a></li>
+            <li class="click_logout"><a href="javascript:;"><span><img src="images/icon-logout-1.png"></span>Logout</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/select2/js/select2.full.min.js"></script>
+
+    <script>
+        document.addEventListener('deviceready', function() {
+            app.createItem();
+        });
+
+    </script>
+</body>
+
+</html>
